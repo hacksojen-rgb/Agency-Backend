@@ -22,3 +22,7 @@ jobs:
           protocol: ftp
           port: 21
           dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.github*
+            node_modules/**
