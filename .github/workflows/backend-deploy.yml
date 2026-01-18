@@ -19,3 +19,9 @@ jobs:
           server-dir: ./
           protocol: ftp
           port: 21
+
+          - name: FTP Deploy to cPanel
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          # ... আগের সব ঠিক থাকবে
+          dangerous-clean-slate: false # এটি যোগ করুন
