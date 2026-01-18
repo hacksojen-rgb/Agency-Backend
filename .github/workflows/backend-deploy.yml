@@ -1,7 +1,9 @@
 name: Deploy Backend to Subdomain
+
 on:
   push:
     branches: [main]
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -15,13 +17,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./ # এখানে ./ থাকবে, ./dist/ নয়
+          local-dir: ./
           server-dir: ./
           protocol: ftp
           port: 21
-
-          - name: FTP Deploy to cPanel
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          # ... আগের সব ঠিক থাকবে
-          dangerous-clean-slate: false # এটি যোগ করুন
+          dangerous-clean-slate: false
