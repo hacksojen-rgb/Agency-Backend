@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Check if settings exist
     $exists = $pdo->query("SELECT COUNT(*) FROM site_settings")->fetchColumn();
     if ($exists > 0) {
-        $stmt = $pdo->prepare("UPDATE site_settings SET companyName=?, address=?, phone=?, email=?, aboutTitle=?, aboutText=? LIMIT 1");
+        $stmt = $pdo->prepare("UPDATE site_settings SET companyName=?, address=?, phone=?, email=?, aboutTitle=?, aboutText=?");
         $stmt->execute([$companyName, $address, $phone, $email, $aboutTitle, $aboutText]);
     } else {
         $stmt = $pdo->prepare("INSERT INTO site_settings (companyName, address, phone, email, aboutTitle, aboutText) VALUES (?, ?, ?, ?, ?, ?)");
