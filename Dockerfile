@@ -1,9 +1,12 @@
 FROM php:8.2-apache
 
-# Enable required PHP extensions
-RUN docker-php-ext-install pdo pdo_pgsql
+# Install system dependencies for PostgreSQL
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    && docker-php-ext-install pdo pdo_pgsql \
+    && rm -rf /var/lib/apt/lists/*
 
-# Enable Apache rewrite (optional but good)
+# Enable Apache rewrite
 RUN a2enmod rewrite
 
 # Copy project files to Apache root
