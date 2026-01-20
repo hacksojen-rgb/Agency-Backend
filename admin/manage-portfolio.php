@@ -107,7 +107,7 @@ $portfolio = $pdo->query("SELECT * FROM portfolio ORDER BY id DESC")->fetchAll()
                 <?php foreach ($portfolio as $p): ?>
                 <div class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all group">
                     <div class="h-48 overflow-hidden bg-gray-200">
-                        <img src="<?php echo $p['imageUrl']; ?>" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        src="<?php echo htmlspecialchars($p['imageUrl']); ?>"
                     </div>
                     <div class="p-6">
                         <div class="text-xs font-bold text-[#4DB6AC] uppercase mb-1"><?php echo $p['category']; ?></div>

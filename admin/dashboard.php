@@ -27,6 +27,9 @@ $portfolioCount = $pdo->query("SELECT count(*) FROM portfolio")->fetchColumn();
                 <a href="manage-services.php" class="flex items-center space-x-3 p-3 hover:bg-white/10 rounded-xl transition-all"><i class="fas fa-concierge-bell"></i><span>Services</span></a>
                 <a href="manage-portfolio.php" class="flex items-center space-x-3 p-3 hover:bg-white/10 rounded-xl transition-all"><i class="fas fa-briefcase"></i><span>Portfolio</span></a>
                 <a href="settings.php" class="flex items-center space-x-3 p-3 hover:bg-white/10 rounded-xl transition-all"><i class="fas fa-cog"></i><span>Settings</span></a>
+                <a href="manage-hero.php" class="block py-3 px-8 hover:bg-[#014034]">Hero Slider</a>
+                <a href="manage-pricing.php" class="block py-3 px-8 hover:bg-[#014034]">Pricing Plans</a>
+                <a href="manage-testimonials.php" class="block py-3 px-8 hover:bg-[#014034]">Testimonials</a>
             </nav>
             <div class="p-4 border-t border-white/10">
                 <a href="logout.php" class="flex items-center space-x-3 p-3 text-red-300 hover:text-white transition-all font-bold"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
